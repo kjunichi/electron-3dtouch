@@ -1,0 +1,16 @@
+{
+  "name": "electron-3dtouch",
+  "version": "0.1.0",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kjunichi/electron-3dtouch.git"
+  },
+  "dependencies": {
+    "express": "^4.13.3",
+    "socket.io": "^1.3.7"
+  },
+  "devDependencies": {
+    "electron-rebuild": "^1.0.2"
+  }
+}
