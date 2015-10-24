@@ -54,6 +54,11 @@
 </head>
 
 <body>
+  <div id="sendMyUrlPanel">
+    <lable>iPhone6sの+81な番号もしくはiCloudメールアドレス</label>
+      <input type="text" id="sendId" >
+    <button onclick="send()">iPhone6sに送る</button>
+  </div>
   <div id="console"></div>
   <div id="messages"></div>
   <form action="">
@@ -82,7 +87,20 @@
       document.getElementById('console').innerHTML="[" + force + "]の強さで押されたよ";
       socket.emit('chat message', force);
     }
+  </script>
+  <script>
+  module.paths.push(location.search.slice(3)+'/node_modules');
+  const localip = require('node-local-ip');
+  var elm = document.createElement("div");
+  elm.innerHTML = "open http://"+localip.get()+":3000/ your iphone 6s!";
+  document.body.appendChild(elm);
 
+  function send() {
+    const id = document.getElementById("sendId").value;
+    console.log("id="+id);
+    const msgapp = require('node-messagesapp');
+    msgapp.send(id,"open http://"+localip.get()+":3000/ your iphone 6s!");
+  }
   </script>
 </body>
 

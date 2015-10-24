@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "express": "^4.13.3",
+    "node-local-ip": "kjunichi/node-local-ip",
     "socket.io": "^1.3.7"
   },
   "devDependencies": {

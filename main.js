@@ -30,8 +30,8 @@ app.on('ready', function() {
   });
 
   // and load the index.html of the app.
-  mainWindow.loadUrl('http://127.0.0.1:3000/s');
-
+  mainWindow.loadUrl('http://127.0.0.1:3000/s?d='+__dirname);
+  //mainWindow.loadUrl('file://'+__dirname+'/index.html');
   // Open the DevTools.
   mainWindow.openDevTools();
 
@@ -45,11 +45,11 @@ app.on('ready', function() {
 });
 
 express.get('/', function(req, res){
-  res.sendfile('client.html');
+  res.sendfile(__dirname+'/client.html');
 });
 
 express.get('/s', function(req, res){
-  res.sendfile('index.html');
+  res.sendfile(__dirname+'/index.html');
 });
 io.on('connection', function(socket){
   console.log('a user connected');
